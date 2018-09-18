@@ -1,0 +1,27 @@
+\documentclass[12pt,a4]{article}
+
+\usepackage{graphicx,subfigure,amsmath,amssymb,amsthm, boxedminipage,xcolor,float,enumerate,geometry}
+\usepackage[lined,boxed]{algorithm2e}
+\geometry{left=3cm,right=3cm,top=1.5cm,bottom=3.5cm}
+\date{}
+
+\title{
+	Assignment 7\\
+	\vspace{3mm}
+	{\normalsize 516030910259 \textbf{Xinpeng Liu}}
+}
+\begin {document}
+	\maketitle
+	\paragraph{7.2}
+	Mutual exclusion: A chopstick can only be held by one philosopher at one time.\\
+	Hold and wait: When a philosopher holds a chopstick, it will keep waiting for the other.\\
+	No preemption: The philosophers are equal. No one can grab chopsticks from others.\\
+	Circular wait: $P_0$ waits for the chopstick held by $P_1$, $P_1$ waits for the chopstick held by $P_2$, ..., $P_4$ wait for the chopstick held by $P_1$.\\
+	The condition of `No Preemption` can be avoided by giving the philosophers different priorities, and the philosopher with higher priority can grab chopstick from someone with lower priority
+	\paragraph{7.3}.
+	Containment doesn't need additional order definition, while circular-wait scheme needs.\\
+	Under containment, there is actually only one thread can execute at one time, while multiple threads can run at the same time under circular-wait scheme.\\
+	Circular-wait scheme can be more efficient than containment, but containment is easier.
+	\paragraph{7.5}
+	The changes of $b.$, $d.$ and $f.$ can be made safely whenever they happen.
+\end {document}

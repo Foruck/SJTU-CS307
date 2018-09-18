@@ -1,0 +1,53 @@
+\documentclass[11pt,a4]{article}
+
+\usepackage{graphicx,subfigure,amsmath,amssymb,amsthm, boxedminipage,xcolor,float,enumerate,geometry,listings}
+\usepackage[lined,boxed]{algorithm2e}
+\geometry{left=3cm,right=3cm,top=0cm,bottom=2cm}
+\date{}
+\author{516030910259   Xinpeng Liu}
+\title{
+	Assignment Three
+}
+\begin {document}
+    \maketitle
+	\paragraph{3.2} 
+	When a context switch occurs, the operating system saves the state context of the current process in its PCB, then load the state context of the process scheduled to run into CPU.
+	\paragraph{3.4}
+	The output is ``PARENT: value = 5''.
+	fork() creates two processes. In the child process, fork() returns 0 to pid, executes $value += 15$ and exits. In the parent process, fork() returns the child's process identifier which >0, then the parent executes Line A, and exits.
+	\paragraph{3.5}
+		\begin{enumerate}[a.]
+		\item Synchronous communication is easier for programmers, for it's reduces their work on maintaining synchronous, but it is hard to implement. Asynchronous communication needs the programmers to take synchronization into consideration, so it's more difficult. But it's easier to implement.
+		\item Automatic buffering is easier for programmers, but the system needs to do more. Explicit buffering is opposite.
+		\item Sending by copy reduces the possibility of programmers making mistakes, but it requires the system to handle the parameters passing. Sending by reference can arouse various mistakes like what happens in C++ when using pointers, while the system is easier to be implemented.
+		\item Fixed-sized makes system-level implementation straightforward, but makes programming more difficult. Conversely, variable-sized message is easy for programmers, but hard to implement for system level.
+		\end{enumerate}
+	\paragraph{3.9}
+		The code goes as follows.
+		\lstset{basicstyle=\footnotesize, numbers=left, breaklines=true, tabsize=2}
+		\begin{lstlisting}[language=java]
+	import java.net.*;
+	import java.io.*;
+	public class EchoServer{
+		public static void main(String[] args){
+			try{
+				ServerSocket sock=new ServerSocket(6013);
+				while (true){
+					Socket socket=sock.accept();
+					InputStream in=socket.getInputStream();
+					OutputStream out=socket.getOutputStream();
+					byte[] b=new byte[4*1024];
+					int len;
+					while ((len=in.read(b))!=-1){ out.write(b,0,len); }
+					out.close(); in.close(); socket.close();
+				}
+			}
+			catch(IOException ioe){
+				System.err.println(ioe);
+			}
+		}
+	}
+		\end{lstlisting}
+	
+	
+\end {document}

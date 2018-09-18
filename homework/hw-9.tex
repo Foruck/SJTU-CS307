@@ -1,0 +1,33 @@
+\documentclass[12pt,a4]{article}
+
+\usepackage{graphicx,subfigure,amsmath,amssymb,amsthm, boxedminipage,xcolor,float,enumerate,geometry}
+\usepackage[lined,boxed]{algorithm2e}
+\geometry{left=3cm,right=3cm,top=1.5cm,bottom=3.5cm}
+\date{}
+
+\title{
+	Assignment 9\\
+	\vspace{3mm}
+	{\normalsize 516030910259 \textbf{Xinpeng Liu}}
+}
+\begin {document}
+	\maketitle
+	\paragraph{9.4} The higher 20 bits of the address, which in this case is $11123_{16}$ will be transferred into a corresponding 6-bit physical page number by MMU. For example the corresponding 6-bit page number is $0F_{16}$. The lower 12 bits will be saved as page offset. Then these two parts will be spliced into an 18-bit physical address $0F456_{16}$. 
+	\paragraph{9.8}.
+	Consider the sequence `1,2,3,3,4,5,1` with a memory that can hold 4 pages. When fetching page 5, MFU will replace page 3, and LRU will replace page 1. Then for the next access, LRU will generate a page fault while MFU won't.\\
+	For the opposite, consider the sequence `1,2,3,3,4,5,3` for the same memory. When fetching page 5, MFU replaces page 3, and LRU replaces page 1. Then for the next access, MFU will generate a page fault while LRU won't.
+	\paragraph{9.13}
+	\begin{enumerate}[a.]
+		\item
+			\begin{enumerate}
+				\item 0
+				\item When a new page is associated with the frame.
+				\item When a page that associated with the frame is not needed.
+				\item Choose the page with the least counter. Use FIFO if there are counters with the same value.
+			\end{enumerate}
+		\item 14 page faults.
+		\item 11 page faults.
+	\end{enumerate}
+	\paragraph{9.14}
+	0.8*1+0.18*2+0.02*20002=401.2us
+\end {document}

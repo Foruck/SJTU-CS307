@@ -1,0 +1,31 @@
+\documentclass[12pt,a4]{article}
+
+\usepackage{graphicx,subfigure,amsmath,amssymb,amsthm, boxedminipage,xcolor,float,enumerate,geometry}
+\usepackage[lined,boxed]{algorithm2e}
+\geometry{left=3cm,right=3cm,top=1.5cm,bottom=3.5cm}
+\date{}
+
+\title{
+	Assignment Five\\
+	\vspace{3mm}
+	{\normalsize 516030910259 \textbf{Xinpeng Liu}}
+}
+\begin {document}
+    \maketitle
+	\paragraph{5.5} 
+		b. and d. \\
+		In shortest-job-first algorithm, when a process is executing, if there always appears a shorter process coming to queue, the algorithm will always choose the shorter one, which makes the original process suffer from starvation. \\
+		In priority algorithm, if there is a process with the lowest priority, the chances are that it will suffer from starvation because every new process can make the algorithm suspend it and execute the new process.
+	\paragraph{5.6} 
+		\begin{enumerate}[a.]
+			\item This process will be assigned twice the CPU time than the others.
+			\item 
+				Advantages: First, it won't suffer from starvation, every process can be executed. Second, it provides a better responsibility for processes.\\
+				Disadvantages: First, the average waiting is usually longer. Second, the context switch can waste a lot of time. 
+		\end{enumerate}
+	\paragraph{5.9} 
+		\begin{enumerate}[a.]
+			\item In this algorithm, we can see if a process enters the ready queue later than another, its priority is always smaller. And the running process always has a higher priority. When a new process enters the queue, it has the lowest priority. These three features make the algorithm actually becomes a FCFS algorithm.
+			\item In this algorithm, a later process has higher priority; the priority of a running process is higher than a waiting one; a new process has the highest priority. These features make the preemptive algorithm always execute the newest process. It becomes a last-come-first-served(LCFS) algorithm.
+		\end{enumerate}
+\end {document}

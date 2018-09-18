@@ -1,0 +1,27 @@
+\documentclass[12pt,a4]{article}
+
+\usepackage{graphicx,subfigure,amsmath,amssymb,amsthm, boxedminipage,xcolor,float,enumerate,geometry}
+\usepackage[lined,boxed]{algorithm2e}
+\geometry{left=3cm,right=3cm,top=1.5cm,bottom=3.5cm}
+\date{}
+
+\title{
+	Assignment Six\\
+	\vspace{3mm}
+	{\normalsize 516030910259 \textbf{Xinpeng Liu}}
+}
+\begin {document}
+    \maketitle
+	\paragraph{6.3} 
+		\begin{enumerate}
+			\item Busy waiting means when a process is waiting for a semaphore, it's still in loop, which actually wastes CPU's cycles.
+			\item Block waiting: when a process is waiting, it blocks itself.
+			\item In uni-processor systems, it can be avoided by inhibiting interrupts. But in multi-processor systems, it can't be avoided because it's difficult to disable interrupts on all the processors.
+		\end{enumerate}
+	\paragraph{6.4} 
+		A process can get out of spinlock only when another process release it from the spinlock. In a single-processor system, when a process is stuck in spinlock, the other processes don't have the chance to be executed to release it from the spinlock. While in a multi-processor system, the other processes can still run on other CPUs to release it from the spinlock. 
+	\paragraph{6.5} 
+		If a user-level program is given the ability to disable interrupts, it can hurt the stability of the system or disable other processes to use the CPU.
+	\paragraph{6.6}
+		Interrupts can only prevent other processes running on a certain core. Other cores are not limited by disabling interrupts on one core. So the other processes with the same critical section can still run on other CPUs. Then we can't achieve the goal of mutual exclusion in this way.
+\end {document}

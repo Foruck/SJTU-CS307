@@ -1,0 +1,42 @@
+\documentclass[12pt,a4]{article}
+
+\usepackage{graphicx,subfigure,amsmath,amssymb,amsthm, boxedminipage,xcolor,float,enumerate,geometry}
+\usepackage[lined,boxed]{algorithm2e}
+\geometry{left=3cm,right=3cm,top=1.5cm,bottom=3.5cm}
+\date{}
+
+\title{
+	Assignment 11\\
+	\vspace{3mm}
+	{\normalsize 516030910259 \textbf{Xinpeng Liu}}
+}
+\begin {document}
+	\maketitle
+	\paragraph{11.1} 
+		\begin{enumerate}[a.]
+			\item It's easy for the implementation of the allocation, but it may result in more internal fragmentation, 
+			\item It's complicated for allocation, and there might be more external fragmentation.
+			\item It achieves intermediate complexity and flexibility compared with the former two schemes.
+		\end{enumerate}
+	\paragraph{11.3}.
+		\begin{enumerate}[a.]
+			\item Yes. We can search the entire directory structure, find the empty spaces and link them into a new free-space list.
+			\item 4.
+			\item Store the pointer on the disk.
+		\end{enumerate}
+	\paragraph{11.6}
+		\begin{enumerate}[a.]
+			\item Assume $X$ is the start address of the file, $L$ is the logical address, $Y$ is the physical block number translated from logical address, and $Z$ is the block offset.
+				\begin{enumerate}
+					\item Contiguous. $Y$=$L/512$, $Z$=$L\%512$. Load the block with address $X+Y$ into memory. $Z$ is the offset.
+					\item Linked. $Y$=$L/511$, $Z$=$L\%511$. Load the block with address $X$, then chase down the list by $Y+1$ elements. $Z$ is the offset.
+					\item Indexed. $Y$=$L/512$, $Z$=$L\%512$. Load the block with address $X$, then the $Y$th line is the target physical block number. $Z$ is the offset.
+				\end{enumerate}
+			\item 
+			\begin{enumerate}
+					\item Contiguous. 1.
+					\item Linked. 4.
+					\item Indexed. 2.
+				\end{enumerate}
+		\end{enumerate}
+\end {document}

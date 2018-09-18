@@ -1,0 +1,28 @@
+\documentclass[12pt,a4]{article}
+
+\usepackage{graphicx,subfigure,amsmath,amssymb,amsthm, boxedminipage,xcolor,float,enumerate,geometry}
+\usepackage[lined,boxed]{algorithm2e}
+\geometry{left=3cm,right=3cm,top=1.5cm,bottom=3.5cm}
+\date{}
+
+\title{
+	Assignment 10\\
+	\vspace{3mm}
+	{\normalsize 516030910259 \textbf{Xinpeng Liu}}
+}
+\begin {document}
+	\maketitle
+	\paragraph{10.1} 
+		\begin{enumerate}
+			\item When a process that will access the old file will finally access the new file, which can result in unknown mistakes.
+			\item When a process tries to access a deleted file through a link, delete the link.
+		\end{enumerate}
+	\paragraph{10.2}.
+		\begin{enumerate}
+			\item It should maintain one centralized open-file table. Because for a file, it should be deleted only when all the processes accessing it close it. This check can be implemented only with a centralized open-file table.
+			\item Yes.
+		\end{enumerate}
+	\paragraph{10.3}
+		Advantages:It's safer and easier to keep the synchronization of the files accessed by different programs.\\
+		Disadvantages: It limits the flexibility, decreases the utilization and increases the time of accessing files.
+\end {document}

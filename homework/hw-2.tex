@@ -1,0 +1,26 @@
+\documentclass[12pt,a4]{article}
+
+\usepackage{graphicx,subfigure,amsmath,amssymb,amsthm, boxedminipage,xcolor,float,enumerate,geometry}
+\usepackage[lined,boxed]{algorithm2e}
+\geometry{left=3cm,right=3cm,top=1.5cm,bottom=3.5cm}
+\date{}
+
+\title{
+	Assignment One \\
+	\vspace{3mm}
+	{\normalsize 516030910259 \textbf{Xinpeng Liu}}
+}
+\begin {document}
+    \maketitle
+	\paragraph{2.3} The first way is to pass the parameters through registers. The second way is to pass the address of the parameters stored in memory. The third way is to push the parameters onto or pop them off the system stack.
+	\paragraph{2.5} Create and delete files. Create and delete directories. Primitives for file/directory manipulation. Mapping files onto secondary storage. Backup files on stable state.
+	\paragraph{2.6} 
+		Advantages: It's easy. Each device can be accessed as a file.\\
+		Disadvantages: It could be less convenient to access device for specific functions within file system calls. It can be less efficient or less functional.
+	\paragraph{2.12} 
+		Advantages: Small. Easy to extend the OS. Easier to port from one hardware design to another. More security and reliability.\\
+		The client program and service interact indirectly by exchanging messages with the microkernel.\\
+		Disadvantages: It can suffer from performance decreases due to increased system function overhead.
+	\paragraph{2.15}
+		When a Java method is first invoked, the bytecodes for the method will be turned into machine language and cached. When the method invoked again, it won't need to be interpreted again. Therefore, it's faster.
+\end {document}

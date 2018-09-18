@@ -1,0 +1,28 @@
+\documentclass[12pt,a4]{article}
+
+\usepackage{graphicx,subfigure,amsmath,amssymb,amsthm, boxedminipage,xcolor,float,enumerate,geometry}
+\usepackage[lined,boxed]{algorithm2e}
+\geometry{left=3cm,right=3cm,top=1.5cm,bottom=3.5cm}
+\date{}
+
+\title{
+	Assignment Four \\
+	\vspace{3mm}
+	{\normalsize 516030910259 \textbf{Xinpeng Liu}}
+}
+\begin {document}
+    \maketitle
+	\paragraph{4.1} 
+		\begin{enumerate}
+			\item When we have a large number of operations, each consumes very little time. If we create a thread for each operation, the time used for creating and terminating threads is actually longer than the time used for operations. In this way, multi-threading doesn't work better.
+			\item When we have a limited amount of resource, if we create lots of threads, to schedule those threads can take a long time. In this condition, single-threading is actually more efficient. 
+		\end{enumerate}
+	\paragraph{4.4} Global variables.
+	\paragraph{4.5} Yes. When running on multiprocessor system, different threads can execute on different processors at the same. While on single-processor system, the processor has to switch frequently among threads, which is slower.
+	\paragraph{4.8} 
+		\begin{enumerate}[a.]
+			\item Every thread is mapped to a processor, but the other processors are idle at the same time.
+			\item Every thread is mapped to a processor, and there are no idle processors. But when a thread makes a blocking system call, the corresponding processor will be idle.
+			\item Every processor is mapped to a thread, but the other threads are suspended at the same time. When a thread makes a blocking system call, it can be replaced by other threads, which increases the performance.
+		\end{enumerate}
+\end {document}
